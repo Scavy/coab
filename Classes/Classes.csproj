@@ -129,6 +129,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Cheats.cs" />
+    <Compile Include="ReadOnlyFileStream.cs" />
     <Compile Include="ClassStatsMin.cs" />
     <Compile Include="Combat.cs" />
     <Compile Include="Combat\CombatantMap.cs" />
@@ -140,7 +141,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DaxFiles\DaxCache.cs" />
-    <Compile Include="DaxFiles\DaxFileCache.cs" />
+    <Compile Include="DaxFiles\DaxFile.cs" />
     <Compile Include="DaxFiles\DaxHeaderEntry.cs" />
     <Compile Include="Display.cs" />
     <Compile Include="EclBlock.cs">
