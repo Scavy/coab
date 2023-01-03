@@ -287,9 +287,9 @@ namespace engine
             return casting_spell;
         }
 
-        static int[,] data_2B8 = new int[,]{ 
-            {8, 7, 6, 1, 2, 8}, {8, 1, 2, 7, 6, 7}, {7, 1, 8, 6, 2, 1}, {1, 7, 8, 2, 6, 8}, {8, 7, 6, 5, 4, 8}, 
-            {8, 1, 2, 3, 4, 8}, {8, 4, 6, 2, 8, 6}, {6, 4, 0, 8, 0, 6}, {6, 2, 8, 2, 0, 4}, {4, 0, 0, 2, 6, 2}, 
+        static int[,] data_2B8 = new int[,]{
+            {8, 7, 6, 1, 2, 8}, {8, 1, 2, 7, 6, 7}, {7, 1, 8, 6, 2, 1}, {1, 7, 8, 2, 6, 8}, {8, 7, 6, 5, 4, 8},
+            {8, 1, 2, 3, 4, 8}, {8, 4, 6, 2, 8, 6}, {6, 4, 0, 8, 0, 6}, {6, 2, 8, 2, 0, 4}, {4, 0, 0, 2, 6, 2},
             {2, 2, 0, 4, 4, 4} /*, {4, 2, 6, 6}*/ };/* actual from seg600:02BD - seg600:02F8 */
 
         internal static bool CanMove(out bool groundClear, int baseDirecction, int dirStep, Player player) // sub_3573B
@@ -435,7 +435,7 @@ namespace engine
                         }
                         else
                         {
-                            var_2 = (data_2B8[player.actions.field_15, dirStep-1] + dir) % 8;
+                            var_2 = (data_2B8[player.actions.field_15, dirStep - 1] + dir) % 8;
 
                             if (dirStep == 6 || ((var_2 + 4) % 8) == byte_1AB18)
                             {
@@ -873,7 +873,7 @@ namespace engine
 
 
         static void AI_items_selection(Player player)  // sub_36673 
-        {         
+        {
             player.weaponsHandsUsed -= player.activeItems.PrimaryWeaponHandCount();
             player.weaponsHandsUsed -= player.activeItems.SecondaryWeaponHandCount();
 

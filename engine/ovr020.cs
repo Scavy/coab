@@ -17,7 +17,7 @@ namespace engine
     class ovr020
     {
         internal static string[] sexString = { "Male", "Female" };
-        internal static string[] raceString = { "Monster", "Dwarf", "Elf", "Gnome", 
+        internal static string[] raceString = { "Monster", "Dwarf", "Elf", "Gnome",
                                          "Half-Elf", "Halfling", "Half-Orc", "Human" };
 
         internal static string[] alignmentString = { "Lawful Good", "Lawful Neutral", "Lawful Evil",
@@ -25,9 +25,9 @@ namespace engine
                                               "Chaotic Good", "Chaotic Neutral", "Chaotic Evil" };
 
         internal static string[] classString = { "Cleric", "Druid", "Fighter", "Paladin", "Ranger",
-                                          "Magic-User", "Thief", "Monk", "Cleric/Fighter", 
+                                          "Magic-User", "Thief", "Monk", "Cleric/Fighter",
                                           "Cleric/Fighter/Magic-User", "Cleric/Ranger",
-                                          "Cleric/Magic-User","Cleric/Thief", "Fighter/Magic-User", 
+                                          "Cleric/Magic-User","Cleric/Thief", "Fighter/Magic-User",
                                           "Fighter/Thief", "Fighter/Magic-User/Thief",
                                           "Magic-User/Thief" };
 
@@ -230,8 +230,8 @@ namespace engine
             }
         }
 
-        static Set asc_54B50 = new Set(73, 83, 84 );
-        static Set unk_54B03 = new Set(0, 69 );
+        static Set asc_54B50 = new Set(73, 83, 84);
+        static Set unk_54B03 = new Set(0, 69);
 
         internal static bool viewPlayer()
         {
@@ -624,7 +624,7 @@ namespace engine
 
 
         /*seg600:44B6 unk_1A7C6*/
-        public readonly static byte[,] MU_spell_lvl_learn = { 
+        public readonly static byte[,] MU_spell_lvl_learn = {
             {1, 0, 0, 0, 0},
             {0, 1, 0, 0, 0},
             {1, 1, 0, 0, 0},
@@ -1495,11 +1495,11 @@ namespace engine
         }
 
         static Affects[] paladinCureableDiseases = { // unk_16B39
-            Affects.helpless, 
-            Affects.cause_disease_1, 
-            Affects.weaken, 
-            Affects.cause_disease_2, 
-            Affects.hot_fire_shield, 
+            Affects.helpless,
+            Affects.cause_disease_1,
+            Affects.weaken,
+            Affects.cause_disease_2,
+            Affects.hot_fire_shield,
             Affects.affect_39 };
 
         internal static void PaladinCureDisease(Player player) /* sub_577EC */

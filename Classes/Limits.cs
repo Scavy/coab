@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Classes
+﻿namespace Classes
 {
     public static class Limits
     {
@@ -25,27 +21,27 @@ namespace Classes
         public static int[] ChaAgeEffect = { 0, 0, 0, 0, 0 };
 
 
-        public static int[, ,] StrRaceSexMinMax = {
+        public static int[,,] StrRaceSexMinMax = {
             { {0, 5}, {10,  0} },
             { {8, 8}, {18, 17} },
             { {3, 3}, {18, 16} },
-            { {6, 6}, {18, 15} }, 
+            { {6, 6}, {18, 15} },
             { {3, 3}, {18, 17} },
             { {6, 6}, {17, 14} },
-            { {6, 6}, {18, 18} }, 
+            { {6, 6}, {18, 18} },
             { {3, 3}, {18, 18} } };
 
-        public static int[, ,] Str00RaceSexMinMax = {
-            { {0, 0}, {  5,  5} }, 
+        public static int[,,] Str00RaceSexMinMax = {
+            { {0, 0}, {  5,  5} },
             { {0, 0}, { 99,  0} },
             { {0, 0}, { 75,  0} },
             { {0, 0}, { 50,  0} },
             { {0, 0}, { 90,  0} },
-            { {0, 0}, {  0,  0} }, 
+            { {0, 0}, {  0,  0} },
             { {0, 0}, { 99, 75} },
             { {0, 0}, {100, 50} } };
 
-        public static int[, ,] IntRaceSexMinMax = {
+        public static int[,,] IntRaceSexMinMax = {
             { {10, 10}, {15, 15} } ,
             { { 3,  3}, {18, 18} } ,
             { { 8,  8}, {18, 18} } ,
@@ -55,7 +51,7 @@ namespace Classes
             { { 3,  3}, {17, 17} } ,
             { { 3,  3}, {18, 18} } };
 
-        public static int[, ,] WisRaceSexMinMax = {
+        public static int[,,] WisRaceSexMinMax = {
             { {5, 5}, {10, 10} },
             { {3, 3}, {18, 18} },
             { {3, 3}, {18, 18} },
@@ -65,7 +61,7 @@ namespace Classes
             { {3, 3}, {14, 14} },
             { {3, 3}, {18, 18} } };
 
-        public static int[, ,] DexRaceSexMinMax = {
+        public static int[,,] DexRaceSexMinMax = {
             { {10, 10}, {15, 15} },
             { { 3,  3}, {17, 17} },
             { { 7,  7}, {19, 19} },
@@ -75,7 +71,7 @@ namespace Classes
             { { 3,  3}, {17, 17} },
             { { 3,  3}, {18, 18} } };
 
-        public static int[, ,] ConRaceSexMinMax = {
+        public static int[,,] ConRaceSexMinMax = {
             { {20, 20}, {10, 10} },
             { {12, 12}, {19, 19} },
             { { 6,  6}, {18, 18} },
@@ -85,7 +81,7 @@ namespace Classes
             { {13, 13}, {19, 19} },
             { { 3,  3}, {18, 18} } };
 
-        public static int[, ,] ChaRaceSexMinMax = {
+        public static int[,,] ChaRaceSexMinMax = {
              { {12, 12}, {12, 12} },
              { { 3,  3}, {16, 16} },
              { { 8,  8}, {18, 18} },

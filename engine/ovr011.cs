@@ -6,7 +6,7 @@ namespace engine
     class ovr011
     {
         // the 2 is made up.
-        static byte[, , ,] unk_1AB1C = new byte[2, 4, 6, 11]; //seg600:480C unk_1AB1C
+        static byte[,,,] unk_1AB1C = new byte[2, 4, 6, 11]; //seg600:480C unk_1AB1C
 
         internal static void set_background_tile(int tileId, int y, int x) /* sub_37046 */
         {
@@ -824,10 +824,10 @@ namespace engine
         }
 
 
-		static int min_placement_column = 0;
-		static int max_placement_column = 10;
-		static int min_placement_row = 0;
-		static int max_placement_row = 5;
+        static int min_placement_column = 0;
+        static int max_placement_column = 10;
+        static int min_placement_row = 0;
+        static int max_placement_row = 5;
 
         static bool row_column_both_out_of_range(int row, int column) /* sub_38202 */
         {
@@ -865,11 +865,11 @@ namespace engine
                     gbl.BackGroundTiles[groundTile].move_cost < 0xFF)
                 {
                     unk_1AB1C[gbl.currentTeam, arg_0, arg_6, arg_8] = 0;
-					return true;
+                    return true;
                 }
                 else
                 {
-					return false;
+                    return false;
                 }
             }
         }
@@ -882,7 +882,7 @@ namespace engine
         static byte[] /*seg600:0300*/ unk_16610 = { 5, 4, 5, 6, 3, 8, 7, 2 };
         static byte[] /*seg600:0308*/ unk_16618 = { 3, 2, 2, 3, 0, 2, 5, 3 };
 
-        static byte[, ,] unk_16620 = new byte[5, 6, 2] { // unk_16620 seg600:0310 
+        static byte[,,] unk_16620 = new byte[5, 6, 2] { // unk_16620 seg600:0310 
                 {{1,0},{1,0},{1,0},{2,9},{3,10},{4,10}}, // 310 - 31B
                 {{0,2},{0,3},{1,4},{2,5},{3,6},{4,7}}, // 31C - 327
                 {{0,6},{0,7},{1,8},{1,0},{1,0},{1,0}}, // 328 - 333

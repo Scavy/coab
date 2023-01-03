@@ -1,11 +1,9 @@
-using System;
-
 namespace Classes
 {
     public class DownedPlayerTile
     {
         public DownedPlayerTile() // Struct_1D183
-		{
+        {
             Clear();
         }
 

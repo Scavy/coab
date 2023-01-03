@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Classes
 {
@@ -123,7 +121,7 @@ namespace Classes
 
                     default:
                         throw new InvalidOperationException();
-                    //return 0;
+                        //return 0;
                 }
             }
             else throw new InvalidOperationException();

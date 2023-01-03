@@ -502,13 +502,13 @@ namespace engine
 
         internal static void BuildEffectNameMap()
         {
-            Affects[] affects = { Affects.bless, Affects.cursed, Affects.detect_magic, Affects.protection_from_evil, 
-                                  Affects.protection_from_good, Affects.resist_cold, Affects.charm_person, Affects.enlarge, 
-                                  Affects.friends, Affects.read_magic, Affects.shield, Affects.find_traps, Affects.resist_fire, 
-                                  Affects.silence_15_radius, Affects.slow_poison, Affects.spiritual_hammer, Affects.detect_invisibility, 
-                                  Affects.invisibility, Affects.mirror_image, Affects.ray_of_enfeeblement, Affects.animate_dead, 
-                                  Affects.blinded, Affects.cause_disease_1, Affects.bestow_curse, Affects.blink, Affects.strength, 
-                                  Affects.haste, Affects.prot_from_normal_missiles, Affects.slow, Affects.prot_from_evil_10_radius, 
+            Affects[] affects = { Affects.bless, Affects.cursed, Affects.detect_magic, Affects.protection_from_evil,
+                                  Affects.protection_from_good, Affects.resist_cold, Affects.charm_person, Affects.enlarge,
+                                  Affects.friends, Affects.read_magic, Affects.shield, Affects.find_traps, Affects.resist_fire,
+                                  Affects.silence_15_radius, Affects.slow_poison, Affects.spiritual_hammer, Affects.detect_invisibility,
+                                  Affects.invisibility, Affects.mirror_image, Affects.ray_of_enfeeblement, Affects.animate_dead,
+                                  Affects.blinded, Affects.cause_disease_1, Affects.bestow_curse, Affects.blink, Affects.strength,
+                                  Affects.haste, Affects.prot_from_normal_missiles, Affects.slow, Affects.prot_from_evil_10_radius,
                                   Affects.prot_from_good_10_radius, Affects.prayer, Affects.snake_charm, Affects.paralyze, Affects.sleep };
 
             foreach (Affects aff in affects)
@@ -683,7 +683,7 @@ namespace engine
         }
 
         static string[] reorderStrings = { "Select Exit", "Place Exit" }; //seg600_04A6
-        static Set reorderSet = new Set(13,80,83);
+        static Set reorderSet = new Set(13, 80, 83);
         static void reorder_party()
         {
             int reorderState = 0;

@@ -1,10 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-using System.Threading;
-using Classes;
 using Logging;
+using System;
 using System.IO;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace Main
 {
@@ -23,7 +21,7 @@ namespace Main
 
             //Environment.OSVersion.Platform
             AppDomain.CurrentDomain.UnhandledException
-                += delegate(object sender, UnhandledExceptionEventArgs args)
+                += delegate (object sender, UnhandledExceptionEventArgs args)
                 {
                     var exception = (Exception)args.ExceptionObject;
 
@@ -62,7 +60,7 @@ namespace Main
 
         static void EngineStopped()
         {
-            VoidDelegate d = delegate()
+            VoidDelegate d = delegate ()
             {
                 Application.Exit();
             };

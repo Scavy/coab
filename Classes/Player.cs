@@ -6,11 +6,11 @@ namespace Classes
 {
     public struct StatValue : IDataIO
     {
-        int[, ,] raceSexMinMax;
+        int[,,] raceSexMinMax;
         int[] classMin;
         int[] ageEffects;
 
-        public StatValue(int[, ,] _raceSexMinMax, int[] _classMin, int[] _ageEffects)
+        public StatValue(int[,,] _raceSexMinMax, int[] _classMin, int[] _ageEffects)
         {
             raceSexMinMax = _raceSexMinMax;
             classMin = _classMin;
@@ -46,7 +46,7 @@ namespace Classes
 
         public void EnforceRaceSexLimits(int race, int sex)
         {
-            if( raceSexMinMax != null )
+            if (raceSexMinMax != null)
             {
                 full = Math.Min(raceSexMinMax[race, 1, sex], full);
                 full = Math.Max(raceSexMinMax[race, 0, sex], full);
@@ -137,33 +137,33 @@ namespace Classes
             Str00.Assign(ps.Str00);
         }
 
-		public void Dec(int idx)
-		{
-			switch (idx)
-			{
-				case 0: Str.Dec(); break;
-				case 1: Int.Dec(); break;
-				case 2: Wis.Dec(); break;
-				case 3: Dex.Dec(); break;
-				case 4: Con.Dec(); break;
-				case 5: Cha.Dec(); break;
-				default: throw new IndexOutOfRangeException(string.Format("idx {0} not in [0-5]", idx));
-			}
-		}
+        public void Dec(int idx)
+        {
+            switch (idx)
+            {
+                case 0: Str.Dec(); break;
+                case 1: Int.Dec(); break;
+                case 2: Wis.Dec(); break;
+                case 3: Dex.Dec(); break;
+                case 4: Con.Dec(); break;
+                case 5: Cha.Dec(); break;
+                default: throw new IndexOutOfRangeException(string.Format("idx {0} not in [0-5]", idx));
+            }
+        }
 
-		public void Inc(int idx)
-		{
-			switch (idx)
-			{
-				case 0: Str.Inc(); break;
-				case 1: Int.Inc(); break;
-				case 2: Wis.Inc(); break;
-				case 3: Dex.Inc(); break;
-				case 4: Con.Inc(); break;
-				case 5: Cha.Inc(); break;
-				default: throw new IndexOutOfRangeException(string.Format("idx {0} not in [0-5]", idx));
-			}
-		}
+        public void Inc(int idx)
+        {
+            switch (idx)
+            {
+                case 0: Str.Inc(); break;
+                case 1: Int.Inc(); break;
+                case 2: Wis.Inc(); break;
+                case 3: Dex.Inc(); break;
+                case 4: Con.Inc(); break;
+                case 5: Cha.Inc(); break;
+                default: throw new IndexOutOfRangeException(string.Format("idx {0} not in [0-5]", idx));
+            }
+        }
 
         public StatValue this[int idx]
         {
@@ -210,7 +210,7 @@ namespace Classes
             if (secondaryWeapon == null) return 0;
 
             return secondaryWeapon.HandsCount();
-        }     
+        }
 
         public Item primaryWeapon // field_151
         {// 0x151

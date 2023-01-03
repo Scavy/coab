@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Classes
+﻿namespace Classes
 {
     public enum SaveVerseType
     {
@@ -11,7 +7,7 @@ namespace Classes
         RodStaffWand,
         BreathWeapon,
         Spell
-	}
+    }
 
     public enum SpellWhen
     {

@@ -1,7 +1,7 @@
 using Classes;
-using System.Collections.Generic;
-using System;
 using Classes.Combat;
+using System;
+using System.Collections.Generic;
 
 namespace engine
 {
@@ -21,8 +21,8 @@ namespace engine
             player.affects.Clear();
         }
 
-        static string[] menuStrings = {   
-            "Create New Character", 
+        static string[] menuStrings = {
+            "Create New Character",
             "Drop Character",
             "Modify Character",
             "Train Character",
@@ -51,8 +51,8 @@ namespace engine
         const int allow_exit = 11;
 
 
-        static bool[] menuFlags = {  
-            true, 
+        static bool[] menuFlags = {
+            true,
             false,
             false,
             false,
@@ -310,7 +310,7 @@ namespace engine
         //static byte[] /*seg600:45B3 */ unk_1A8C3 = { 3, 3, 5, 5, 5, 2, 2, 5 };
         //static byte[] /*seg600:45B4 */ unk_1A8C4 = { 6, 6, 4, 4, 4, 4, 6, 4 };
 
-        internal static sbyte[,] /* seg600:3E3A unk_1A14A */ thac0_table = { 
+        internal static sbyte[,] /* seg600:3E3A unk_1A14A */ thac0_table = {
             {40, 40, 40, 40, 0x2A, 0x2A, 0x2A, 0x2C, 0x2C, 0x2C, 0x2E, 0x2E, 0x2E},
             {40, 40, 40, 40, 0x2A, 0x2A, 0x2A, 0x2C, 0x2C, 0x2C, 0x2E, 0x2E, 0x2E},
             {0x27, 40, 40, 0x2A, 0x2B, 0x2C, 0x2D, 0x2E, 0x2F, 0x30, 0x31, 0x32, 0x33},
@@ -672,7 +672,7 @@ namespace engine
                 player.stats2.Cha.full = 0;
                 player.stats2.Str00.full = 0;
 
-                for(int i = 0; i < 6; i++)
+                for (int i = 0; i < 6; i++)
                 {
                     player.stats2.Str.full = Math.Max(player.stats2.Str.full, ovr024.roll_dice(6, 3) + 1);
                     player.stats2.Int.full = Math.Max(player.stats2.Int.full, ovr024.roll_dice(6, 3) + 1);
@@ -1107,7 +1107,7 @@ namespace engine
                                 int race = (int)player.race;
                                 int sex = player.sex;
 
-								player.stats2.Dec(stat_var);
+                                player.stats2.Dec(stat_var);
 
                                 switch ((Stat)stat_var)
                                 {
@@ -1203,8 +1203,8 @@ namespace engine
                                     case Stat.STR:
                                         player.stats2.Str.EnforceRaceSexLimits(race, sex);
 
-                                        if( player.stats2.Str.full == 18 &&
-                                            (player.fighter_lvl >0 || player.ranger_lvl > 0 || player.paladin_lvl > 0) )
+                                        if (player.stats2.Str.full == 18 &&
+                                            (player.fighter_lvl > 0 || player.ranger_lvl > 0 || player.paladin_lvl > 0))
                                         {
                                             player.stats2.Str00.Inc();
                                             player.stats2.Str00.EnforceRaceSexLimits(race, sex);
@@ -1643,12 +1643,12 @@ namespace engine
             byte headIcon;
             char inputKey;
 
-            string[] iconStrings = {   "", 
-									   "Parts 1st-color 2nd-color Size Exit", 
-									   "Head Weapon Exit", 
-									   "Weapon Body xxxx Shield Arm Leg Exit", 
-									   " Keep Exit", 
-									   "Next Prev Keep Exit" };
+            string[] iconStrings = {   "",
+                                       "Parts 1st-color 2nd-color Size Exit",
+                                       "Head Weapon Exit",
+                                       "Weapon Body xxxx Shield Arm Leg Exit",
+                                       " Keep Exit",
+                                       "Next Prev Keep Exit" };
 
             seg037.DrawFrame_Outer();
             ovr033.Color_0_8_inverse();
@@ -2075,7 +2075,7 @@ namespace engine
             public int max_mult;
         }
 
-        static hp_calc[] hp_calc_table = { 
+        static hp_calc[] hp_calc_table = {
             new hp_calc(8, 0, 0x48, 2), // Cleric
             new hp_calc(8, 0, 0x70, 0), // Druid
             new hp_calc(10, 0, 0x5A, 3), // Fighter
@@ -2315,7 +2315,7 @@ namespace engine
                     return;
                 }
             }
-            
+
 
             byte actualTrainingClassesMask;
             if (Cheats.free_training == false)

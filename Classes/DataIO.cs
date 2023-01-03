@@ -1,7 +1,6 @@
+using Logging;
 using System;
 using System.Reflection;
-using System.Text;
-using Logging;
 
 namespace Classes
 {
@@ -64,7 +63,7 @@ namespace Classes
                 case DataType.SWord:
                     return 2;
                 case DataType.Int:
-                    return 4;         
+                    return 4;
                 default:
                     throw new NotImplementedException();
             }
@@ -152,7 +151,7 @@ namespace Classes
                     return ((bool)o) ? (ushort)1 : (ushort)0;
                 default:
                     throw new NotImplementedException();
-                //return 0;
+                    //return 0;
             }
         }
 

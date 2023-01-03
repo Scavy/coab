@@ -4,14 +4,14 @@ namespace engine
 {
     class ovr004
     {
-        static string[] codeWheel = { 
-								 "CWLNRTESSCEDCSHSISERRRNSHSSTSSNNHSHN",
-								 "LAASRDAIILIDSUGADAEEOEGRLSELIITESOIO",
-								 "LRUNIMMORIIGRRIUPTIIUELIMLHMIXACGRIL",
-								 "Z0LIOHEUVNODSGEOGXYWISIOCRARLRARRHOI",
-								 "AMTELRLUIYNAEOOITOUELRREREUIMADPPFAB",
-								 "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
-							 };
+        static string[] codeWheel = {
+                                 "CWLNRTESSCEDCSHSISERRRNSHSSTSSNNHSHN",
+                                 "LAASRDAIILIDSUGADAEEOEGRLSELIITESOIO",
+                                 "LRUNIMMORIIGRRIUPTIIUELIMLHMIXACGRIL",
+                                 "Z0LIOHEUVNODSGEOGXYWISIOCRARLRARRHOI",
+                                 "AMTELRLUIYNAEOOITOUELRREREUIMADPPFAB",
+                                 "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+                             };
 
         internal static void copy_protection()
         {

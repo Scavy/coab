@@ -12,7 +12,7 @@ namespace engine
             new Point[] { new Point( 0, 0 ) },
             new Point[] { new Point( 0, 0 ), new Point(  0,  1 ) },
             new Point[] { new Point( 0, 0 ), new Point(  1,  0 ) },
-            new Point[] { new Point( 0, 0 ), new Point(  1,  0 ), new Point( 0,  1 ), new Point(  1,  1 ) }   
+            new Point[] { new Point( 0, 0 ), new Point(  1,  0 ), new Point( 0,  1 ), new Point(  1,  1 ) }
         };
 
         internal static Point[] GetSizeBasedMapDeltas(int size) /*sub_7400F*/
@@ -88,7 +88,7 @@ namespace engine
                 PlayerOnScreen(false, player_index) == true)
             {
                 // draws the player icon over focus box
-                ovr034.draw_combat_icon(gbl.player_array[player_index].icon_id, 
+                ovr034.draw_combat_icon(gbl.player_array[player_index].icon_id,
                     Icon.Normal,
                     gbl.player_array[player_index].actions.direction,
                     gbl.CombatMap[player_index].screenPos.y,

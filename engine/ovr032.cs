@@ -18,7 +18,7 @@ namespace engine
             }
         }
 
-        static MapReach[, ,] mapReachCache = new MapReach[Point.MapMaxY * Point.MapMaxX, Point.MapMaxY * Point.MapMaxX, 2];
+        static MapReach[,,] mapReachCache = new MapReach[Point.MapMaxY * Point.MapMaxX, Point.MapMaxY * Point.MapMaxX, 2];
 
         //internal static void buildMapCache()
         //{
@@ -52,18 +52,18 @@ namespace engine
 
         static MapReach MapCacheGet(Point p1, Point p2, bool ignoreWalls)
         {
-			int nIgnoreWalls = ignoreWalls ? 1 : 0;
-			MapReach mr = mapReachCache[(p2.y * Point.MapMaxX) + p2.x, (p1.y * Point.MapMaxX) + p1.x, nIgnoreWalls];
+            int nIgnoreWalls = ignoreWalls ? 1 : 0;
+            MapReach mr = mapReachCache[(p2.y * Point.MapMaxX) + p2.x, (p1.y * Point.MapMaxX) + p1.x, nIgnoreWalls];
             if (mr != null) return mr;
 
             bool bkup_val = gbl.mapToBackGroundTile.ignoreWalls;
-			gbl.mapToBackGroundTile.ignoreWalls = ignoreWalls;
+            gbl.mapToBackGroundTile.ignoreWalls = ignoreWalls;
 
-			mr = canReachTargetCalc(gbl.mapToBackGroundTile, p2, p1);
+            mr = canReachTargetCalc(gbl.mapToBackGroundTile, p2, p1);
 
-			gbl.mapToBackGroundTile.ignoreWalls = bkup_val;
+            gbl.mapToBackGroundTile.ignoreWalls = bkup_val;
 
-			mapReachCache[(p2.y * Point.MapMaxX) + p2.x, (p1.y * Point.MapMaxX) + p1.x, nIgnoreWalls] = mr;
+            mapReachCache[(p2.y * Point.MapMaxX) + p2.x, (p1.y * Point.MapMaxX) + p1.x, nIgnoreWalls] = mr;
             return mr;
         }
 
@@ -76,7 +76,7 @@ namespace engine
 
         internal static bool canReachTarget(ref int range, Point target, Point attacker)
         {
-			MapReach mr = MapCacheGet(attacker, target, gbl.mapToBackGroundTile.ignoreWalls);
+            MapReach mr = MapCacheGet(attacker, target, gbl.mapToBackGroundTile.ignoreWalls);
 
             if (mr.range > (range * 2) + 1)
             {

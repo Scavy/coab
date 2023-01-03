@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Drawing;
 using System.Drawing.Imaging;
 
@@ -31,7 +29,7 @@ namespace Classes
         static int scanLineWidth;
         static int outputWidth;
         static int outputHeight;
-        
+
         static public Bitmap bm;
         static Rectangle rect = new Rectangle(0, 0, 320, 200);
 
@@ -174,7 +172,7 @@ namespace Classes
         }
 
 
-      
+
         public static void RawCopy(byte[] videoRam, int videoRamSize)
         {
             System.Drawing.Imaging.BitmapData bmpData =

@@ -116,8 +116,8 @@ namespace engine
             }
         }
 
-        internal static int[,] bounds = new int[3, 4] { 
-            { 0x16, 0x26, 0x11, 1 }, 
+        internal static int[,] bounds = new int[3, 4] {
+            { 0x16, 0x26, 0x11, 1 },
             { 0x16, 0x26, 0x15, 1 },
             { 0x15, 0x26, 1, 0x17 } // TextRegion.CombatSummary
         };
@@ -283,7 +283,7 @@ namespace engine
                 string input = getUserInputString(6, bgColor, fgColor, prompt);
 
                 good_input = int.TryParse(input, out value);
-        
+
                 if (good_input)
                 {
                     good_input = (value < 0x00010000 && value >= 0);

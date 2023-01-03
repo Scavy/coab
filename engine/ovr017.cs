@@ -1,8 +1,7 @@
 using Classes;
-using System.Collections.Generic;
 using Logging;
+using System.Collections.Generic;
 using System.IO;
-using System;
 
 namespace engine
 {
@@ -76,7 +75,7 @@ namespace engine
             }
             else if (gbl.import_from == ImportSource.Hillsfar)
             {
-                BuildLoadablePlayersLists(ref fileNames, ref  displayNames, HillsFarPlayer.StructSize, NpcFileOffset[2], PlayerNameOffset[2], "*.hil");
+                BuildLoadablePlayersLists(ref fileNames, ref displayNames, HillsFarPlayer.StructSize, NpcFileOffset[2], PlayerNameOffset[2], "*.hil");
             }
         }
 
@@ -479,7 +478,7 @@ namespace engine
         static ClassId[] HillsFarClassMap = {
     ClassId.unknown,    ClassId.thief,      ClassId.fighter,    ClassId.mc_f_t, ClassId.magic_user,
     ClassId.mc_mu_t,    ClassId.mc_f_mu,    ClassId.mc_f_mu_t,  ClassId.cleric, ClassId.mc_c_t,
-    ClassId.mc_c_f,     ClassId.unknown,    ClassId.mc_c_mu,    ClassId.unknown, ClassId.mc_c_f_m, 
+    ClassId.mc_c_f,     ClassId.unknown,    ClassId.mc_c_mu,    ClassId.unknown, ClassId.mc_c_f_m,
     ClassId.unknown};
 
 
@@ -1102,8 +1101,8 @@ namespace engine
             gbl.game_state = GameState.StartGameMenu;
         }
 
-        static Set unk_4AEA0 = new Set(0, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74); 
-        static Set unk_4AEEF = new Set(0, 2, 18); 
+        static Set unk_4AEA0 = new Set(0, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74);
+        static Set unk_4AEEF = new Set(0, 2, 18);
 
 
         internal static void SaveGame()

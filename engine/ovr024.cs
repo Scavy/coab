@@ -105,7 +105,7 @@ namespace engine
             {
                 found = true;
             }
-            else if (System.Array.Exists(unk_6325A, vv => vv ==affect_type) == true)
+            else if (System.Array.Exists(unk_6325A, vv => vv == affect_type) == true)
             {
                 foreach (Player team_member in gbl.TeamList)
                 {
@@ -660,27 +660,27 @@ namespace engine
 
         internal static void RemoveCombatAffects(Player player) // sub_645AB
         {
-            Affects[] table = { 
-								  Affects.faerie_fire,
-								  Affects.charm_person,
-								  Affects.reduce,
-								  Affects.silence_15_radius,
-								  Affects.spiritual_hammer,
-								  Affects.stinking_cloud,
-								  Affects.helpless,
-								  Affects.animate_dead,
-								  Affects.snake_charm,
-								  Affects.paralyze,
-								  Affects.sleep,
-								  Affects.clear_movement,
-								  Affects.regenerate,
-								  Affects.affect_5F,
-								  Affects.regen_3_hp,
-								  Affects.entangle,
-								  Affects.affect_89,
-								  Affects.affect_8b,
-								  Affects.owlbear_hug_round_attack
-							  };
+            Affects[] table = {
+                                  Affects.faerie_fire,
+                                  Affects.charm_person,
+                                  Affects.reduce,
+                                  Affects.silence_15_radius,
+                                  Affects.spiritual_hammer,
+                                  Affects.stinking_cloud,
+                                  Affects.helpless,
+                                  Affects.animate_dead,
+                                  Affects.snake_charm,
+                                  Affects.paralyze,
+                                  Affects.sleep,
+                                  Affects.clear_movement,
+                                  Affects.regenerate,
+                                  Affects.affect_5F,
+                                  Affects.regen_3_hp,
+                                  Affects.entangle,
+                                  Affects.affect_89,
+                                  Affects.affect_8b,
+                                  Affects.owlbear_hug_round_attack
+                              };
 
             System.Array.ForEach(table, affect => remove_affect(null, affect, player));
 
@@ -693,10 +693,10 @@ namespace engine
 
         internal static void RemoveAttackersAffects(Player player) // sub_6460D
         {
-            Affects[] table = {   Affects.reduce, 
-								  Affects.clear_movement, 
-								  Affects.affect_8b, 
-								  Affects.owlbear_hug_round_attack };
+            Affects[] table = {   Affects.reduce,
+                                  Affects.clear_movement,
+                                  Affects.affect_8b,
+                                  Affects.owlbear_hug_round_attack };
 
             System.Array.ForEach(table, affect => remove_affect(null, affect, player));
         }
@@ -794,8 +794,8 @@ namespace engine
                 classLvl += 1;
             }
 
-            if (class_index == SkillType.Fighter || 
-                class_index == SkillType.Paladin || 
+            if (class_index == SkillType.Fighter ||
+                class_index == SkillType.Paladin ||
                 class_index == SkillType.Ranger)
             {
                 if (cons >= 15 && cons <= 19)
@@ -985,7 +985,7 @@ namespace engine
                 }
             }
 
-            if (stat_index == Stat.STR) 
+            if (stat_index == Stat.STR)
             {
                 Affect affect_ptr;
 
@@ -1252,7 +1252,7 @@ namespace engine
 
                     if (player.health_status == Status.dead ||
                         player.health_status == Status.stoned ||
-                        player.health_status == Status.gone )
+                        player.health_status == Status.gone)
                     {
                         text = "is killed";
                     }
@@ -1299,7 +1299,7 @@ namespace engine
 
 
         internal static void ApplyAttackSpellAffect(string text, bool saved, DamageOnSave can_save, bool call_affect_table, int data, ushort time, Affects affect_id, Player target) // is_unaffected
-		{
+        {
             gbl.current_affect = affect_id;
 
             CheckAffectsEffect(target, CheckType.MagicResistance);
@@ -1335,7 +1335,7 @@ namespace engine
             if (player.health_status == Status.okey ||
                 player.health_status == Status.animated ||
                 player.health_status == Status.unconscious ||
-                player.health_status == Status.dying )
+                player.health_status == Status.dying)
             {
                 if (player.hit_point_current < player.hit_point_max ||
                     (player.hit_point_current >= player.hit_point_max &&

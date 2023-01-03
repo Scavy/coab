@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Classes.DaxFiles
+﻿namespace Classes.DaxFiles
 {
     class DaxHeaderEntry
     {

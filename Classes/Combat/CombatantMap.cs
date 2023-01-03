@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Classes.Combat
+﻿namespace Classes.Combat
 {
     public class CombatantMap // Struct_1C9CD
     {

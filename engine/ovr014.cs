@@ -198,7 +198,7 @@ namespace engine
 
                 if (target.health_status == Status.dead ||
                     target.health_status == Status.stoned ||
-                    target.health_status == Status.gone )
+                    target.health_status == Status.gone)
                 {
                     ovr025.DisplayPlayerStatusString(false, line, "is killed", target);
                 }
@@ -600,8 +600,8 @@ namespace engine
             return false;
         }
 
-        static sbyte[] /*seg600:0369*/ unk_16679 = { 0, 
-        17, 17,  0,  0,  1, 17,  0,  0, 32, 32, 
+        static sbyte[] /*seg600:0369*/ unk_16679 = { 0,
+        17, 17,  0,  0,  1, 17,  0,  0, 32, 32,
         10,  7,  4,  1,  1,  0,  0, -1, -1, -1 };
 
         internal static void turns_undead(Player player)
@@ -945,7 +945,7 @@ namespace engine
                 DrawRangedAttack(rangedWeapon, target, attacker);
             }
 
-            if (attacker.activeItems.primaryWeapon != null && 
+            if (attacker.activeItems.primaryWeapon != null &&
                 (attacker.activeItems.primaryWeapon.type == ItemType.Sling ||
                 attacker.activeItems.primaryWeapon.type == ItemType.StaffSling))
             {

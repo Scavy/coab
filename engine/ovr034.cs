@@ -1,6 +1,6 @@
 using Classes;
-using Logging;
 using Classes.Combat;
+using Logging;
 
 namespace engine
 {

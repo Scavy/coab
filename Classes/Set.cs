@@ -1,5 +1,3 @@
-using System;
-
 namespace Classes
 {
     /// <summary>
@@ -54,7 +52,7 @@ namespace Classes
             }
         }
 
-   
+
         public void DumpSet()
         {
             var sb = new System.Text.StringBuilder();

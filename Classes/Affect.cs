@@ -1,5 +1,3 @@
-using System;
-
 namespace Classes
 {
     public enum Affects
