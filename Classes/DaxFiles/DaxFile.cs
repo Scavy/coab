@@ -5,11 +5,11 @@ namespace Classes.DaxFiles
 {
     class DaxFile
     {
-        Dictionary<int, byte[]> entries;
+        private readonly Dictionary<int, byte[]> _entries;
 
         internal DaxFile(string filename)
         {
-            entries = new Dictionary<int, byte[]>();
+            _entries = new Dictionary<int, byte[]>();
 
             LoadFile(filename);
         }
@@ -21,79 +21,79 @@ namespace Classes.DaxFiles
             {
                 int dataOffset = fileA.ReadInt16() + 2;
 
-                var headers = new List<DaxHeaderEntry>();
+                List<DaxHeaderEntry> headers = new List<DaxHeaderEntry>();
 
                 const int headerEntrySize = 9;
 
                 for (int i = 0; i < ((dataOffset - 2) / headerEntrySize); i++)
                 {
-                    var dhe = new DaxHeaderEntry();
-                    dhe.id = fileA.ReadByte();
-                    dhe.offset = fileA.ReadInt32();
-                    dhe.rawSize = fileA.ReadInt16();
-                    dhe.compSize = fileA.ReadUInt16();
+                    DaxHeaderEntry header = new DaxHeaderEntry();
+                    header.Id = fileA.ReadByte();
+                    header.Offset = fileA.ReadInt32();
+                    header.DataSize = fileA.ReadInt16();
+                    header.CompressedSize = fileA.ReadUInt16();
 
-                    headers.Add(dhe);
+                    headers.Add(header);
                 }
 
-                foreach (DaxHeaderEntry dhe in headers)
+                foreach (DaxHeaderEntry header in headers)
                 {
-                    byte[] comp = new byte[dhe.compSize];
-                    byte[] raw = new byte[dhe.rawSize];
+                    byte[] compressed = new byte[header.CompressedSize];
+                    byte[] data = new byte[header.DataSize];
 
-                    fileA.BaseStream.Seek(dataOffset + dhe.offset, SeekOrigin.Begin);
+                    fileA.BaseStream.Seek(dataOffset + header.Offset, SeekOrigin.Begin);
 
-                    comp = fileA.ReadBytes(dhe.compSize);
+                    compressed = fileA.ReadBytes(header.CompressedSize);
 
-                    Decode(dhe.rawSize, dhe.compSize, raw, comp);
+                    data = Extract(header.DataSize, compressed);
 
-                    entries.Add(dhe.id, raw);
+                    _entries.Add(header.Id, data);
                 }
             }
         }
 
-        void Decode(int decodeSize, int dataLength, byte[] output_ptr, byte[] input_ptr)
+        private byte[] Extract(int outputSize, byte[] compressed)
         {
-            sbyte run_length;
-            int output_index;
-            int input_index;
+            var output = new byte[outputSize];
 
-            input_index = 0;
-            output_index = 0;
+            var inputIndex = 0;
+            var outputIndex = 0;
 
-            do
+            while (inputIndex < compressed.Length)
             {
-                run_length = (sbyte)input_ptr[input_index];
+                var runLength = (sbyte)compressed[inputIndex];
 
-                if (run_length >= 0)
+                if (runLength >= 0)
                 {
-                    for (int i = 0; i <= run_length; i++)
+                    for (int i = 0; i <= runLength; i++)
                     {
-                        output_ptr[output_index + i] = input_ptr[input_index + i + 1];
+                        output[outputIndex + i] = compressed[inputIndex + i + 1];
                     }
 
-                    input_index += run_length + 2;
-                    output_index += run_length + 1;
+                    inputIndex += runLength + 2;
+                    outputIndex += runLength + 1;
                 }
                 else
                 {
-                    run_length = (sbyte)(-run_length);
+                    runLength = (sbyte)(-runLength);
 
-                    for (int i = 0; i < run_length; i++)
+                    for (int i = 0; i < runLength; i++)
                     {
-                        output_ptr[output_index + i] = input_ptr[input_index + 1];
+                        output[outputIndex + i] = compressed[inputIndex + 1];
                     }
 
-                    input_index += 2;
-                    output_index += run_length;
+                    inputIndex += 2;
+                    outputIndex += runLength;
                 }
-            } while (input_index < dataLength);
+            }
+
+            return output;
         }
 
-        internal byte[] GetData(int block_id)
+        internal byte[] GetData(int blockId)
         {
             byte[] orig;
-            if (entries.TryGetValue(block_id, out orig) == false)
+            if (_entries.TryGetValue(blockId, out orig) == false)
             {
                 return null;
             }
