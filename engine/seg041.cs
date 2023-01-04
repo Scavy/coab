@@ -55,7 +55,7 @@ namespace engine
 
                 for (int i = 0; i < repeatCount; i++)
                 {
-                    Display.DisplayMono8x8(XCol + i, YCol, gbl.monoCharData, bgColor, fgColor);
+                    Display.DisplayMono8X8(XCol + i, YCol, gbl.monoCharData, bgColor, fgColor);
                 }
             }
         }
