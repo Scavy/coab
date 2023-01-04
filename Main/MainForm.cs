@@ -25,9 +25,15 @@ namespace Main
             {
                 displayArea.Invoke(new MethodInvoker(UpdateDisplayCallback));
             }
+ //           else
+ //           {
+ //               displayArea.Image = (Image)Classes.Display.bm.Clone();
+ //           }
             else
             {
-                displayArea.Image = (Image)Classes.Display.bm.Clone();
+                var graphics = displayArea.CreateGraphics();
+                graphics.DrawImage(Classes.Display.Bitmap, 0, 0, 640, 400);
+                graphics.Dispose();
             }
         }
 
