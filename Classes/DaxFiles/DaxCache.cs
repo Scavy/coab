@@ -2,23 +2,21 @@
 
 namespace Classes.DaxFiles
 {
-    public class DaxCache
+    public static class DaxCache
     {
-        static Dictionary<string, DaxFile> fileCache = new Dictionary<string, DaxFile>();
+        private static readonly Dictionary<string, DaxFile> FileCache = new Dictionary<string, DaxFile>();
 
-        public static byte[] LoadDax(string file_name, int block_id)
+        public static byte[] LoadDax(string fileName, int blockId)
         {
-            DaxFile dfc;
+            fileName = fileName.ToLower();
 
-            file_name = file_name.ToLower();
-
-            if (!fileCache.TryGetValue(file_name, out dfc))
+            if (!FileCache.TryGetValue(fileName, out var daxFileCache))
             {
-                dfc = new DaxFile(file_name);
-                fileCache.Add(file_name, dfc);
+                daxFileCache = new DaxFile(fileName);
+                FileCache.Add(fileName, daxFileCache);
             }
 
-            return dfc.GetData(block_id);
+            return daxFileCache.GetData(blockId);
         }
     }
 }
