@@ -136,7 +136,7 @@ namespace engine
             //  newColor += 8;
             //}
 
-            Display.SetEgaPalette(index, newColor);
+            Display.SetColorMap(index, newColor);
         }
 
 
