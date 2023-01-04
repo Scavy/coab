@@ -8,8 +8,8 @@ namespace Main
 {
     static class Program
     {
-        static MainForm main;
-        static Thread engineThread;
+        private static MainForm _main;
+        private static Thread _engineThread;
 
         /// <summary>
         /// The main entry point for the application.
@@ -45,29 +45,25 @@ namespace Main
 
             Logger.SetExitFunc(engine.seg043.print_and_exit);
 
-            main = new MainForm();
+            _main = new MainForm();
 
-            ThreadStart threadDelegate = new ThreadStart(EngineThread);
-            engineThread = new Thread(threadDelegate);
-            engineThread.Name = "Engine";
-            engineThread.Start();
+            ThreadStart threadDelegate = EngineThread;
+            _engineThread = new Thread(threadDelegate) { Name = "Engine" };
+            _engineThread.Start();
 
 
-            Application.Run(main);
+            Application.Run(_main);
         }
 
-        public delegate void VoidDelegate();
+        private delegate void VoidDelegate();
 
-        static void EngineStopped()
+        private static void EngineStopped()
         {
-            VoidDelegate d = delegate ()
-            {
-                Application.Exit();
-            };
-            main.Invoke(d);
+            VoidDelegate d = Application.Exit;
+            _main.Invoke(d);
         }
 
-        static void EngineThread()
+        private static void EngineThread()
         {
             engine.seg001.__SystemInit(EngineStopped);
             engine.seg001.PROGRAM();

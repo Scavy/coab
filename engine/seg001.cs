@@ -5,21 +5,21 @@ namespace engine
 {
     public class seg001
     {
-        internal static System.Threading.Thread EngineThread;
+        private static System.Threading.Thread _engineThread;
 
         public delegate void VoidDelegate();
-        static VoidDelegate EngineStoppedCallback;
+        private static VoidDelegate _engineStoppedCallback;
 
         internal static void EngineStop()
         {
-            EngineStoppedCallback();
-            EngineThread.Abort();
+            _engineStoppedCallback();
+            _engineThread.Abort();
         }
 
         public static void __SystemInit(VoidDelegate stoppedCallback)
         {
-            EngineThread = System.Threading.Thread.CurrentThread;
-            EngineStoppedCallback = stoppedCallback;
+            _engineThread = System.Threading.Thread.CurrentThread;
+            _engineStoppedCallback = stoppedCallback;
 
             ConfigGame();
         }
